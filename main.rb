@@ -9,6 +9,7 @@ class LinkedList
     @tail = nil
   end
   
+  # adds nodes to the end of the list
   def append(value)
     new_node = Node.new(value)
     return @head = new_node if @head.nil?
@@ -22,6 +23,7 @@ class LinkedList
     end
   end
 
+  # adds nodes at the beginning of the list
   def prepend(value)
     new_node = Node.new(value)
     previous_head = @head
@@ -32,8 +34,23 @@ class LinkedList
     @tail = previous_head
   end
 
+  # returns the total number of nodes in the list
   def size
     puts Node.count
+  end
+
+  # returns node data at given index
+  def at(index)
+    current_node = @head
+    return current_node.data if index == 0
+
+    while index >= 1 do
+      current_node = current_node.next_node
+      return nil if current_node == nil
+
+      index -= 1
+    end
+    current_node.data
   end
 end
 
@@ -41,6 +58,7 @@ end
 class Node
   @@count = 0
   attr_accessor :next_node
+  attr_reader :data
 
   def initialize(data)
     @data = data

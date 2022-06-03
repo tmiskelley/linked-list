@@ -28,8 +28,8 @@ class LinkedList
     new_node = Node.new(value)
     previous_head = @head
     return @head = new_node if @head.nil?
-    return @tail = previous_head if @tail.nil?
 
+    @tail = previous_head if @tail.nil?
     @head = new_node
     @head.next_node = previous_head
   end

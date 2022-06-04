@@ -52,6 +52,16 @@ class LinkedList
     end
     current_node.data
   end
+
+  # prints string representation of given list
+  def to_s
+    current_node = @head
+    until current_node.nil?
+      print "( #{current_node.data} ) -> "
+      current_node = current_node.next_node
+    end
+    print "nil\n"
+  end
 end
 
 # Models node objects for linked list

@@ -36,7 +36,13 @@ class LinkedList
 
   # returns the total number of nodes in the list
   def size
-    puts Node.count
+    node_count = 1
+    current_node = @head
+    until current_node == @tail
+      node_count += 1
+      current_node = current_node.next_node
+    end
+    puts node_count
   end
 
   # returns node data at given index
@@ -76,17 +82,11 @@ end
 
 # Models node objects for linked list
 class Node
-  @@count = 0
   attr_accessor :next_node
   attr_reader :data
 
   def initialize(data)
     @data = data
     @next_node = nil
-    @@count += 1
-  end
-
-  def self.count
-    @@count
   end
 end

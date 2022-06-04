@@ -53,6 +53,16 @@ class LinkedList
     current_node.data
   end
 
+  # removes the last node in the list
+  def pop
+    current_node = @head
+    until current_node.next_node == @tail
+      current_node = current_node.next_node
+    end
+    current_node.next_node = nil
+    @tail = current_node
+  end
+
   # prints string representation of given list
   def to_s
     current_node = @head

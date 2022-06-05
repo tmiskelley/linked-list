@@ -6,7 +6,7 @@ To use this data structure, simply include it in your file, and create an instan
 
 # Methods
 | Methods           | Description |
-| ----------------- | ----------: |
+| ----------------- | :---------- |
 | #append(value)    | Adds a new node containing value to the end of the list |
 | #prepend(value)   | Adds a new node containing value to the beginning of the list |
 | #size             | Returns the total number of nodes in the list |
